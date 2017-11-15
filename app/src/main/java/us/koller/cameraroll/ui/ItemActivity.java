@@ -38,6 +38,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.WindowInsets;
+import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -163,6 +164,10 @@ public class ItemActivity extends ThemeableActivity {
         setContentView(R.layout.activity_item);
 
         MediaProvider.checkPermission(this);
+
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_FULL;
+        getWindow().setAttributes(lp);
 
         view_only = getIntent().getBooleanExtra(VIEW_ONLY, false);
 

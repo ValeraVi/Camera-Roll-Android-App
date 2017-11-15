@@ -67,6 +67,10 @@ public class VideoPlayerActivity extends ThemeableActivity {
             return;
         }
 
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_FULL;
+        getWindow().setAttributes(lp);
+
         //needed to achieve transparent navBar
         showOrHideSystemUi(true);
 
