@@ -778,6 +778,7 @@ public class ItemActivity extends ThemeableActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(albumItem.getUri(context), "video/*");
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setClassName("us.koller.cameraroll", "us.koller.cameraroll.ui.VideoPlayerActivity");
         try {
             context.startActivity(intent);
         } catch (ActivityNotFoundException e) {
