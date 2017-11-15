@@ -86,7 +86,7 @@ public class SwipeBackCoordinatorLayout extends CoordinatorLayout {
     @Override
     public void onStopNestedScroll(View child, int type) {
         super.onStopNestedScroll(child, type);
-        if (Math.abs(swipeDistance) >= SWIPE_TRIGGER) {
+        if (false && Math.abs(swipeDistance) >= SWIPE_TRIGGER) {
             swipeBack();
         } else {
             reset();
